@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import Navbar from "./components/utils/Navbar";
+import Home from "./components/pages/Home";
+import Signup from "./components/auth/Signup";
+import EmailVerification from "./components/auth/EmailVerification";
+import NotFound from "./components/pages/NotFound";
+import Signin from "./components/auth/Signin";
+import Profile from "./components/user/Profile";
+import AdminSignIn from "./components/adminAuth/AdminSignIn";
+import { useAuth } from "./hooks";
+import AdminNavigator from "./navigator/AdminNavigator";
 
 function App() {
+
+  const { authInfo } = useAuth();
+  const isAdmin  = authInfo.profile?.role === "admin";
+
+  if(isAdmin) return <AdminNavigator />
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/sign-up" element={<Signup />} />
+        <Route path="/sign-in" element={<Signin />} />
+        <Route path="/verification" element={<EmailVerification />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/*" element={<NotFound />} />
+      </Routes>
+    </>
   );
 }
 
