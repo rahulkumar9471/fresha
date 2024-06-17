@@ -5,9 +5,9 @@ import Title from "../form/Title";
 import CustomLink from "../utils/CustomLink";
 import FormInput from "../form/FormInput";
 import toast from "react-hot-toast";
-import { signup } from "../../api/user";
-import CustomButton from "../utils/CustomButton";
+import { signup } from "../../api/user"; 
 import { useNavigate } from "react-router-dom";
+import SubmitButton from "../utils/SubmitButton";
 
 const validateUserInfo = ({ name, email, mobile, password }) => {
   const isValidName = /^[a-z A-Z]+$/;
@@ -117,9 +117,9 @@ const Signup = () => {
           </span>
         </div>
         <div className="mt-4">
-          <CustomButton type="submit" className="w-full">
+          <SubmitButton type="submit" className="w-full">
             Sign Up
-          </CustomButton>
+          </SubmitButton>
         </div>
         <div className="flex justify-center items-center mt-4">
           <p className="">Do you have an account ?</p>

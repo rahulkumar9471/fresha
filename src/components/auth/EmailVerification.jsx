@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
-import FormContainer from "../form/FormContainer";
-import CustomButton from "../utils/CustomButton";
+import FormContainer from "../form/FormContainer"; 
 import { useLocation, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { verifyUserEmail } from "../../api/user";
+import SubmitButton from "../utils/SubmitButton";
 
 const OTP_LENGTH = 6;
 
@@ -110,7 +110,7 @@ const EmailVerification = () => {
             );
           })}
         </div>
-        <CustomButton type="submit" className="w-full">Verify Account</CustomButton>
+        <SubmitButton type="submit" className="w-full">Verify Account</SubmitButton>
         <div className="mt-4 text-center">
           <p className="text-primary font-semibold cursor-pointer transform transition-transform duration-300 hover:scale-110">
             Resend OTP

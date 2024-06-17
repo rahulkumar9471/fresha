@@ -2,7 +2,7 @@ import { Button } from "@mui/material";
 import React from "react";
 import { LiaSpinnerSolid } from "react-icons/lia";
 
-const CustomButton = ({ type, children, busy, className }) => {
+const SubmitButton = ({ type, children, busy, className }) => {
   return (
     <Button
       variant="contained"
@@ -21,4 +21,4 @@ const CustomButton = ({ type, children, busy, className }) => {
   );
 };
 
-export default CustomButton;
+export default SubmitButton;

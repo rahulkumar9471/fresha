@@ -1,8 +1,8 @@
 import client from "./client";
 
-export const adminSignIn = async (adminInfo) => {
+export const adminPersonalInfoUpdate = async (personalInfo) => {
   try {
-    const { data } = await client.post("/admin/signin", adminInfo, {
+    const { data } = await client.post("/admin/admin-profile/:userId", personalInfo, {
       withCredentials: true,
       credentials: "include",
     });

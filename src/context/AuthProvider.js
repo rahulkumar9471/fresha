@@ -43,7 +43,8 @@ const AuthProvider = ({ children }) => {
         isPending: false,
       });
 
-      navigate("/", { replace: true });
+      navigate("/");
+
       toast.success("You are successfully signed in.");
     } catch (error) {
       console.error("An error occurred while Sign In:", error);
@@ -72,6 +73,7 @@ const AuthProvider = ({ children }) => {
         isLoggedIn: true,
         isPending: false,
       });
+      navigate("/");
     } catch (error) {
       console.error("An error occurred while checking authentication:", error);
       toast.error("An unexpected error occurred. Please try again later.");

@@ -6,7 +6,6 @@ import EmailVerification from "./components/auth/EmailVerification";
 import NotFound from "./components/pages/NotFound";
 import Signin from "./components/auth/Signin";
 import Profile from "./components/user/Profile";
-import AdminSignIn from "./components/adminAuth/AdminSignIn";
 import { useAuth } from "./hooks";
 import AdminNavigator from "./navigator/AdminNavigator";
 

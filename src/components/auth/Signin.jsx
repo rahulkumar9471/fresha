@@ -3,13 +3,13 @@ import FormContainer from "../form/FormContainer";
 import Title from "../form/Title";
 import FormInput from "../form/FormInput";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import CustomLink from "../utils/CustomLink";
-import CustomButton from "../utils/CustomButton";
+import CustomLink from "../utils/CustomLink"; 
 import toast from "react-hot-toast";
 import { signin } from "../../api/user";
 
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../hooks";
+import SubmitButton from "../utils/SubmitButton";
 
 const validateUserInfo = ({ username, password }) => {
   const isValidEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -116,9 +116,9 @@ const Signin = () => {
           <CustomLink to="./recover-account.html">Forgot Password ?</CustomLink>
         </div>
         <div className="mt-4">
-          <CustomButton type="submit" className="w-full">
+          <SubmitButton type="submit" className="w-full">
             Sign In
-          </CustomButton>
+          </SubmitButton>
         </div>
         <div className="flex justify-center items-center mt-4">
           <p className="">Don't have an account ?</p>
